@@ -10,7 +10,6 @@ nav: journal
   <!-- LEFT: collapsible archive -->
   <aside class="journal-archive" id="journal-archive">
     <h3 style="margin:0 0 8px 4px;">Archive</h3>
-
     {% assign posts_sorted = site.posts | sort: "date" | reverse %}
     {% assign grouped = posts_sorted | group_by_exp: "post", "post.date | date: '%B %Y'" %}
 
@@ -30,12 +29,10 @@ nav: journal
     {% endfor %}
   </aside>
 
-  <!-- RIGHT: (optional) anything you want -->
+  <!-- RIGHT: your main content -->
   <section class="journal-content">
-    <h1>Journal</h1>
     <p>Thoughts and notes. Use the archive on the left to open a month.</p>
 
-    <!-- You can also show the latest entry link here -->
     {% assign latest = site.posts | sort: "date" | last %}
     {% if latest %}
       <p>
@@ -44,21 +41,19 @@ nav: journal
       </p>
     {% endif %}
   </section>
-
 </div>
 
-<!-- Tiny JS to toggle months -->
+<!-- Toggle script -->
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     document.querySelectorAll('.arch-month').forEach(function (row) {
       row.addEventListener('click', function () {
         row.classList.toggle('open');
-        const id = row.getAttribute('data-target');
-        const list = document.getElementById(id);
+        const list = document.getElementById(row.getAttribute('data-target'));
         if (list) list.style.display = row.classList.contains('open') ? 'block' : 'none';
       });
     });
-    // Open the first month by default (optional)
+    // Open first month by default
     const first = document.querySelector('.arch-month');
     if (first) first.click();
   });
