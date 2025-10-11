@@ -6,23 +6,22 @@ nav: home
 ---
 
 <h1>Preston Malen</h1>
-<p>Quick intro here — interests, projects, and how to reach me.</p>
+<p>Projects, Interests, and Everything in Between</p>
 
 <ul>
   <li>GitHub: <a href="https://github.com/pmalen327">pmalen327</a></li>
-  <li>Email: you@example.com</li>
+  <li>Email: malenpreston@gmail.com</li>
   <li>CV: <a href="/assets/cv.pdf">PDF</a></li>
 </ul>
 
+<hr>
 
-<div class="container">
-  <div class="row grid">
-    {% if site.posts.size > 0 %}
-      {% for post in paginator.posts %}
-        {% include article-content.html %}
-      {% endfor %}
-    {% endif %}
-  </div>
-</div>
-
-{% include pagination.html %}
+{% assign latest = site.posts | sort: "date" | last %}
+{% if latest %}
+  <p>
+    <a href="{{ latest.url | relative_url }}"><strong>Latest journal entry:</strong> {{ latest.title }}</a>
+    <small>— {{ latest.date | date: "%Y-%m-%d" }}</small>
+  </p>
+{% else %}
+  <p><em>No journal entries yet.</em></p>
+{% endif %}
