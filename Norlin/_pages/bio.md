@@ -1,3 +1,5 @@
+{% include top_tabs.html %}
+
 ---
 layout: default
 title: Bio

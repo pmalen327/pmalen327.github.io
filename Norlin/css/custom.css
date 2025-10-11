@@ -1,0 +1,9 @@
+/* Minimal, scoped tweaks so Norlin stays intact */
+.top-tabs { display: flex; gap: 1rem; margin: 1rem 0; }
+.top-tabs a { text-decoration: none; opacity: .8; }
+.top-tabs a.active, .top-tabs a:hover { opacity: 1; border-bottom: 2px solid currentColor; }
+
+.journal-archive .archive-month { margin-top: 1.5rem; font-weight: 600; }
+.journal-archive .post-list { list-style: none; padding: 0; margin: 0; }
+.journal-archive .post-list li { margin: .5rem 0; }
+.journal-archive .post-meta { opacity: .7; font-size: .95rem; }
