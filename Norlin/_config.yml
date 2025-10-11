@@ -1,13 +1,22 @@
 #-------------------------------
 # General Site Settings
-baseurl: "" # The subpath of your site, e.g. /blog
-url: "https://www.prestonmalen.com"
+title: "Preston Malen"
+description: "Projects, Experience, and Everything in Between"
+baseurl: ""                              # root site
+url: "https://prestonmalen.com"       # or your custom domain
 
-
-#-------------------------------
-# Build settings
+# Markdown + MathJax
 markdown: kramdown
-permalink: /:title
+kramdown:
+  input: GFM
+  toc_levels: 1..3
+  math_engine: mathjax
+  hard_wrap: false
+
+# Permalinks (journal-style under /journal/)
+permalink: /journal/:year/:month/:day/:title/
+
+# Plugins (all allowed on GitHub Pages)
 plugins:
   - jekyll-paginate
   - jekyll-sitemap
@@ -15,10 +24,10 @@ plugins:
 paginate: 8
 paginate_path: "/page/:num"
 
-# Pages Path
+# Pages in /_pages get pretty permalinks
 defaults:
   - scope:
-      path: '_pages'
+      path: "_pages"
     values:
       permalink: /:basename:output_ext
 
