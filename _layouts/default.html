@@ -1,42 +1,24 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>{{ page.title | default: site.title }}</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="{{ page.excerpt | strip_html | default: site.description }}">
-  <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}">
-  <!-- MathJax (site-wide LaTeX) -->
-  <script>
-    window.MathJax = {
-      tex: { inlineMath: [['\\(','\\)'], ['$', '$']], displayMath: [['\\[','\\]'], ['$$','$$']] },
-      options: { skipHtmlTags: ['script','noscript','style','textarea','pre','code'] }
-    };
-  </script>
-  <script async id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-</head>
-<body>
-  <header class="site-header">
-    <nav class="nav">
-      <div class="brand">
-        <a href="{{ '/' | relative_url }}">{{ site.title }}</a>
-      </div>
-      <div class="tabs">
-        <a href="{{ '/' | relative_url }}" class="{% if page.nav == 'home' %}active{% endif %}">Home</a>
-        <a href="{{ '/bio/' | relative_url }}" class="{% if page.nav == 'bio' %}active{% endif %}">Bio</a>
-        <a href="{{ '/journal/' | relative_url }}" class="{% if page.nav == 'journal' %}active{% endif %}">Journal</a>
-      </div>
-    </nav>
-  </header>
 
-  <main class="container">
+{% include head.html %}
+
+<body>
+  {% if site.data.settings.google-analytics %}
+    {% include google-analytics.html %}
+  {% endif %}
+
+  {% include header.html %}
+
+  <!-- begin content -->
+  <main class="content" aria-label="Content">
     {{ content }}
   </main>
+  <!-- end content -->
 
-  <footer class="site-footer">
-    <div class="container">
-      © {{ site.time | date: '%Y' }} {{ site.title }} · Powered by Jekyll
-    </div>
-  </footer>
+  <div class="top" title="Top"><i class="fa-solid fa-chevron-up"></i></div>
+  {% include footer.html %}
+  {% include javascripts.html %}
 </body>
+
 </html>
