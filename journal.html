@@ -1,0 +1,33 @@
+---
+layout: page
+title: Journal
+permalink: /journal/
+nav: journal
+---
+
+<h1>Journal</h1>
+
+<!-- Month jump nav -->
+{% assign sorted = site.posts | sort: "date" | reverse %}
+{% assign grouped = sorted | group_by_exp: "post", "post.date | date: '%B %Y'" %}
+<p>
+  {% for month in grouped %}
+    <a href="#{{ month.name | downcase | replace: ' ', '-' }}">{{ month.name }}</a>{% unless forloop.last %} · {% endunless %}
+  {% endfor %}
+</p>
+
+<!-- Archive by month -->
+{% for month in grouped %}
+  <h2 id="{{ month.name | downcase | replace: ' ', '-' }}">{{ month.name }}</h2>
+  <ul style="list-style:none; padding:0; margin:0;">
+    {% for post in month.items %}
+      <li style="padding:.5rem 0; border-bottom:1px solid rgba(128,128,128,.15);">
+        <div><a href="{{ post.url | relative_url }}"><strong>{{ post.title }}</strong></a></div>
+        <div style="opacity:.75; font-size:.95rem;">{{ post.date | date: "%Y-%m-%d" }}</div>
+        {% if post.excerpt %}
+          <div style="margin-top:.25rem; opacity:.9;">{{ post.excerpt | strip_html | truncate: 160 }}</div>
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+{% endfor %}

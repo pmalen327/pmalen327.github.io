@@ -1,0 +1,28 @@
+---
+layout: page
+title: Home
+permalink: /
+nav: home
+---
+
+<h1>Preston Malen</h1>
+<p>Quick intro here — interests, projects, and how to reach me.</p>
+
+<ul>
+  <li>GitHub: <a href="https://github.com/pmalen327">pmalen327</a></li>
+  <li>Email: you@example.com</li>
+  <li>CV: <a href="/assets/cv.pdf">PDF</a></li>
+</ul>
+
+
+<div class="container">
+  <div class="row grid">
+    {% if site.posts.size > 0 %}
+      {% for post in paginator.posts %}
+        {% include article-content.html %}
+      {% endfor %}
+    {% endif %}
+  </div>
+</div>
+
+{% include pagination.html %}

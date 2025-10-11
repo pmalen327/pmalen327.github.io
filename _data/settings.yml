@@ -1,7 +1,7 @@
 #-------------------------------
 # Site Settings
 title: Preston Malen
-logo: # e.g. '/images/logo.png'
+logo:
 description:
 
 #-------------------------------
@@ -15,27 +15,21 @@ menu-settings:
     - title: 'Journal'
       url: '/journal/'
 
-
 #-------------------------------
 # Author Settings
 author:
   name: Preston Malen
-  # avatar: '/images/15.jpg'   # set your own or remove
+  avatar:
 
 #-------------------------------
 # Hero Settings
 hero:
   title: Preston Malen
   description: Thoughts, notes, and projects.
-  # image: '/images/01.jpg'    # set your own or remove
+  image:
 
 #-------------------------------
-# Contact Settings
-contact:
-  email: your@email.com
-  description: ""
-
-#-------------------------------
-# Footer section (trim to what you use)
-social:
-- {icon: "fa-brands fa-github", name: "Github", link: "https://github.com/pmalen327"}
+# Newsletter (disable)
+mailchimp:
+mailchimp-identifier:
+mailchimp-button-text:
