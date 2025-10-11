@@ -5,29 +5,61 @@ permalink: /journal/
 nav: journal
 ---
 
-<h1>Journal</h1>
+<div class="journal-layout">
 
-<!-- Month jump nav -->
-{% assign sorted = site.posts | sort: "date" | reverse %}
-{% assign grouped = sorted | group_by_exp: "post", "post.date | date: '%B %Y'" %}
-<p>
-  {% for month in grouped %}
-    <a href="#{{ month.name | downcase | replace: ' ', '-' }}">{{ month.name }}</a>{% unless forloop.last %} · {% endunless %}
-  {% endfor %}
-</p>
+  <!-- LEFT: collapsible archive -->
+  <aside class="journal-archive" id="journal-archive">
+    <h3 style="margin:0 0 8px 4px;">Archive</h3>
 
-<!-- Archive by month -->
-{% for month in grouped %}
-  <h2 id="{{ month.name | downcase | replace: ' ', '-' }}">{{ month.name }}</h2>
-  <ul style="list-style:none; padding:0; margin:0;">
-    {% for post in month.items %}
-      <li style="padding:.5rem 0; border-bottom:1px solid rgba(128,128,128,.15);">
-        <div><a href="{{ post.url | relative_url }}"><strong>{{ post.title }}</strong></a></div>
-        <div style="opacity:.75; font-size:.95rem;">{{ post.date | date: "%Y-%m-%d" }}</div>
-        {% if post.excerpt %}
-          <div style="margin-top:.25rem; opacity:.9;">{{ post.excerpt | strip_html | truncate: 160 }}</div>
-        {% endif %}
-      </li>
+    {% assign posts_sorted = site.posts | sort: "date" | reverse %}
+    {% assign grouped = posts_sorted | group_by_exp: "post", "post.date | date: '%B %Y'" %}
+
+    {% for month in grouped %}
+      <div class="arch-month" data-target="m{{ forloop.index }}">
+        <span>{{ month.name }}</span>
+        <span class="arch-caret">▶</span>
+      </div>
+      <ul class="arch-list" id="m{{ forloop.index }}">
+        {% for post in month.items %}
+          <li>
+            <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+            <small style="opacity:.75"> — {{ post.date | date: "%Y-%m-%d" }}</small>
+          </li>
+        {% endfor %}
+      </ul>
     {% endfor %}
-  </ul>
-{% endfor %}
+  </aside>
+
+  <!-- RIGHT: (optional) anything you want -->
+  <section class="journal-content">
+    <h1>Journal</h1>
+    <p>Thoughts and notes. Use the archive on the left to open a month.</p>
+
+    <!-- You can also show the latest entry link here -->
+    {% assign latest = site.posts | sort: "date" | last %}
+    {% if latest %}
+      <p>
+        <a href="{{ latest.url | relative_url }}"><strong>Latest entry:</strong> {{ latest.title }}</a>
+        <small>— {{ latest.date | date: "%Y-%m-%d" }}</small>
+      </p>
+    {% endif %}
+  </section>
+
+</div>
+
+<!-- Tiny JS to toggle months -->
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('.arch-month').forEach(function (row) {
+      row.addEventListener('click', function () {
+        row.classList.toggle('open');
+        const id = row.getAttribute('data-target');
+        const list = document.getElementById(id);
+        if (list) list.style.display = row.classList.contains('open') ? 'block' : 'none';
+      });
+    });
+    // Open the first month by default (optional)
+    const first = document.querySelector('.arch-month');
+    if (first) first.click();
+  });
+</script>

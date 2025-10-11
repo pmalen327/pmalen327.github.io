@@ -1,0 +1,48 @@
+/* Journal two-column layout */
+.journal-layout {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 24px;
+}
+@media (max-width: 860px) {
+  .journal-layout { grid-template-columns: 1fr; }
+}
+
+/* Left archive (sticky) */
+.journal-archive {
+  position: sticky;
+  top: 84px; /* below header */
+  align-self: start;
+  max-height: calc(100vh - 120px);
+  overflow: auto;
+  padding-right: 6px;
+  border-right: 1px solid rgba(128,128,128,.15);
+}
+
+/* Month rows */
+.arch-month {
+  margin: 6px 0;
+  padding: 8px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: space-between;
+  background: rgba(255,255,255,0.02);
+}
+.arch-month:hover { background: rgba(255,255,255,0.05); }
+
+/* Caret */
+.arch-caret { transition: transform .2s ease; opacity: .85; }
+.arch-month.open .arch-caret { transform: rotate(90deg); }
+
+/* Post list under each month */
+.arch-list {
+  list-style: none; margin: 0 0 8px 0; padding: 0 0 0 10px;
+  display: none;
+}
+.arch-month.open + .arch-list { display: block; }
+.arch-list li { padding: 6px 0; border-bottom: 1px solid rgba(128,128,128,.12); }
+.arch-list a { text-decoration: none; }
+.arch-list a:hover { text-decoration: underline; }
+
+/* Right column heading (optional) */
+.journal-content h1 { margin-top: 0; }
