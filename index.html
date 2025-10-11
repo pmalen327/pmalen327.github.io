@@ -6,7 +6,7 @@ nav: home
 ---
 
 <h1>Preston Malen</h1>
-<p>Projects, Interests, and Everything in Between</p>
+<p>Quick intro here — interests, projects, contact.</p>
 
 <ul>
   <li>GitHub: <a href="https://github.com/pmalen327">pmalen327</a></li>
@@ -22,6 +22,4 @@ nav: home
     <a href="{{ latest.url | relative_url }}"><strong>Latest journal entry:</strong> {{ latest.title }}</a>
     <small>— {{ latest.date | date: "%Y-%m-%d" }}</small>
   </p>
-{% else %}
-  <p><em>No journal entries yet.</em></p>
 {% endif %}
