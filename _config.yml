@@ -25,14 +25,14 @@ paginate: 8
 paginate_path: "/page/:num"
 
 # Pages in /_pages get pretty permalinks
+include:
+  - _pages
+
 defaults:
   - scope:
       path: "_pages"
     values:
       permalink: /:basename:output_ext
-
-include:
-  - _pages
 
 sass:
   style: compressed
