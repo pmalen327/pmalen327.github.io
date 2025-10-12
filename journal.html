@@ -6,7 +6,7 @@ nav: journal
 ---
 <style>
 /* Two-column journal layout */
-.journal-layout{display:grid;grid-template-columns:280px minmax(0,1fr);gap:24px;align-items:start;margin-left:-20px;}
+.journal-layout{display:grid;grid-template-columns:280px minmax(0,1fr);gap:24px;align-items:start;margin-left:-100px;}
 @media (max-width:860px){.journal-layout{grid-template-columns:1fr}}
 .journal-archive{position:sticky;top:84px;max-height:calc(100vh - 120px);overflow:auto;padding-right:6px;border-right:1px solid rgba(128,128,128,.15)}
 .arch-month{margin:6px 0;padding:8px 10px;border-radius:8px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;background:rgba(255,255,255,.02)}
@@ -45,18 +45,28 @@ nav: journal
   </aside>
 
   <!-- RIGHT: your main content -->
-  <section class="journal-content">
-    <p>Thoughts and notes. Use the archive on the left to open a month.</p>
+<section class="journal-content">
+  {% assign latest = site.posts | sort: "date" | last %}
+  {% if latest %}
+    <article>
+      <h1 style="margin-top:0;">
+        <a href="{{ latest.url | relative_url }}">{{ latest.title }}</a>
+      </h1>
+      <div style="opacity:.75; margin-bottom:1rem;">
+        {{ latest.date | date: "%Y-%m-%d" }}
+      </div>
 
-    {% assign latest = site.posts | sort: "date" | last %}
-    {% if latest %}
-      <p>
-        <a href="{{ latest.url | relative_url }}"><strong>Latest entry:</strong> {{ latest.title }}</a>
-        <small>— {{ latest.date | date: "%Y-%m-%d" }}</small>
+      {{ latest.content }}  <!-- renders the full post, including LaTeX -->
+
+      <p style="margin-top:1.25rem;">
+        <a href="{{ latest.url | relative_url }}">Permalink →</a>
       </p>
-    {% endif %}
-  </section>
-</div>
+    </article>
+  {% else %}
+    <p><em>No entries yet.</em></p>
+  {% endif %}
+</section>
+
 
 <!-- Toggle script -->
 <script>
