@@ -4,6 +4,21 @@ title: Journal
 permalink: /journal/
 nav: journal
 ---
+<style>
+/* Two-column journal layout */
+.journal-layout{display:grid;grid-template-columns:280px minmax(0,1fr);gap:24px;align-items:start}
+@media (max-width:860px){.journal-layout{grid-template-columns:1fr}}
+.journal-archive{position:sticky;top:84px;max-height:calc(100vh - 120px);overflow:auto;padding-right:6px;border-right:1px solid rgba(128,128,128,.15)}
+.arch-month{margin:6px 0;padding:8px 10px;border-radius:8px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;background:rgba(255,255,255,.02)}
+.arch-month:hover{background:rgba(255,255,255,.05)}
+.arch-caret{transition:transform .2s ease;opacity:.85}
+.arch-month.open .arch-caret{transform:rotate(90deg)}
+.arch-list{list-style:none;margin:0 0 8px 0;padding:0 0 0 10px;display:none}
+.arch-month.open + .arch-list{display:block}
+.arch-list li{padding:6px 0;border-bottom:1px solid rgba(128,128,128,.12)}
+.arch-list a{text-decoration:none}
+.arch-list a:hover{text-decoration:underline}
+</style>
 
 <div class="journal-layout">
 
