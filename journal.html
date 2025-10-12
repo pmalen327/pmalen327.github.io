@@ -37,6 +37,7 @@ nav: journal
 }
 </style>
 
+
 <div class="journal-layout">
 
   <!-- LEFT: collapsible archive -->
@@ -45,8 +46,13 @@ nav: journal
     {% assign posts_sorted = site.posts | sort: "date" | reverse %}
     {% assign grouped = posts_sorted | group_by_exp: "post", "post.date | date: '%B %Y'" %}
 
-    {% for month in grouped %}
-      <div class="arch-month" data-target="m{{ forloop.index }}">
+      {% for month in grouped %}
+      <div class="arch-month"
+          role="button"
+          tabindex="0"
+          aria-expanded="false"
+          aria-controls="m{{ forloop.index }}"
+          data-target="m{{ forloop.index }}">
         <span>{{ month.name }}</span>
         <span class="arch-caret">▶</span>
       </div>
@@ -85,16 +91,26 @@ nav: journal
 </section>
 
 
-<!-- Toggle script -->
 <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    document.querySelectorAll('.arch-month').forEach(function (row) {
-      row.addEventListener('click', function () {
-        row.classList.toggle('open');
-        const list = document.getElementById(row.getAttribute('data-target'));
-        if (list) list.style.display = row.classList.contains('open') ? 'block' : 'none';
+  document.addEventListener('DOMContentLoaded', () => {
+    function toggleRow(row){
+      row.classList.toggle('open');
+      const list = document.getElementById(row.getAttribute('data-target'));
+      const open = row.classList.contains('open');
+      if (list) list.style.display = open ? 'block' : 'none';
+      row.setAttribute('aria-expanded', open ? 'true' : 'false');
+    }
+
+    document.querySelectorAll('.arch-month').forEach(row => {
+      row.addEventListener('click', () => toggleRow(row));
+      row.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          toggleRow(row);
+        }
       });
     });
+
     // Open first month by default
     const first = document.querySelector('.arch-month');
     if (first) first.click();

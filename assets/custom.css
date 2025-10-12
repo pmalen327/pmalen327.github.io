@@ -11,3 +11,8 @@
 .arch-list li{padding:6px 0;border-bottom:1px solid rgba(128,128,128,.12)}
 .arch-list a{text-decoration:none}
 .arch-list a:hover{text-decoration:underline}
+.arch-month,
+.arch-month * {
+  cursor: pointer;
+  user-select: none;
+}
