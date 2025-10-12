@@ -35,6 +35,11 @@ nav: journal
   padding-right:6px;
   border-right:1px solid rgba(128,128,128,.15);
 }
+
+.arch-month,
+.arch-month * { cursor: pointer; user-select: none; }
+.arch-caret { display: inline-block; transition: transform .2s ease; opacity: .85; }
+.arch-month.open .arch-caret { transform: rotate(90deg); }
 </style>
 
 
@@ -92,18 +97,27 @@ nav: journal
 
 
 <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    function toggleRow(row){
-      row.classList.toggle('open');
-      const list = document.getElementById(row.getAttribute('data-target'));
-      const open = row.classList.contains('open');
-      if (list) list.style.display = open ? 'block' : 'none';
-      row.setAttribute('aria-expanded', open ? 'true' : 'false');
+  document.addEventListener('DOMContentLoaded', function () {
+    // Click / keyboard toggle handler
+    function toggleRow(row) {
+      const listId = row.getAttribute('data-target');
+      const list   = document.getElementById(listId);
+      const nowOpen = !row.classList.contains('open');
+
+      row.classList.toggle('open', nowOpen);
+      row.setAttribute('aria-expanded', nowOpen ? 'true' : 'false');
+      if (list) list.style.display = nowOpen ? 'block' : 'none';
     }
 
-    document.querySelectorAll('.arch-month').forEach(row => {
-      row.addEventListener('click', () => toggleRow(row));
-      row.addEventListener('keydown', (e) => {
+    // Attach handlers to every month row
+    document.querySelectorAll('.arch-month').forEach(function (row) {
+      // make it accessible/clickable
+      row.setAttribute('role', 'button');
+      row.setAttribute('tabindex', '0');
+      row.setAttribute('aria-expanded', 'false');
+
+      row.addEventListener('click', function () { toggleRow(row); });
+      row.addEventListener('keydown', function (e) {
         if (e.key === 'Enter' || e.key === ' ') {
           e.preventDefault();
           toggleRow(row);
@@ -111,7 +125,7 @@ nav: journal
       });
     });
 
-    // Open first month by default
+    // Open the first month by default
     const first = document.querySelector('.arch-month');
     if (first) first.click();
   });
