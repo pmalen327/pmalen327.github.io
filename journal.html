@@ -6,7 +6,7 @@ nav: journal
 ---
 <style>
 /* Two-column journal layout */
-.journal-layout{display:grid;grid-template-columns:280px minmax(0,1fr);gap:24px;align-items:start}
+.journal-layout{display:grid;grid-template-columns:280px minmax(0,1fr);gap:24px;align-items:start;margin-left:-20px;}
 @media (max-width:860px){.journal-layout{grid-template-columns:1fr}}
 .journal-archive{position:sticky;top:84px;max-height:calc(100vh - 120px);overflow:auto;padding-right:6px;border-right:1px solid rgba(128,128,128,.15)}
 .arch-month{margin:6px 0;padding:8px 10px;border-radius:8px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;background:rgba(255,255,255,.02)}
