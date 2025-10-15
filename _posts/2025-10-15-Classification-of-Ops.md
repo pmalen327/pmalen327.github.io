@@ -68,7 +68,7 @@ but beyond the context of this entry. Now, the basic classification of operators
 Let $a \in A$ be an operator in a $C^\*$-algebra $A$, then we can classify $a$ as
 - **normal** if $aa^\* = a^\*a$
 - **self-adjoint** if $a^\*=a$
-- **positive** if normal and $\operatorname{sp}_A (a) \subseteq \mathbb{R}_+$
+- **positive** if normal and `$\\operatorname{sp}_A (a) \\subseteq \\mathbb{R}_+$`
 - **projection** if $a^\* = a = a^2$
 
 And we denote by $A^+$ the set of all positive operators in $A$. 
