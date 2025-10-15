@@ -1,6 +1,8 @@
 ---
 layout: post
-title: "Basic Classification of Operators in $C^\*$-Algebras"
+title: 'Basic Classification of Operators in $C^*$-Algebras'
+tags: []
+description: ''
 ---
 
 Ok I have finally migrated things over to a github.io repo and now things are infinitely
