@@ -79,4 +79,4 @@ the properties of each classification could each easily populate their own entry
 
 I don't have much more today, like I mentioned, this is mostly to get some kinks
 worked out with git and markdown etc. but I figured I may as well mention something
-foundational in operator theory and ultimately, noncommutative.
+foundational in operator theory and ultimately, noncommutative geometry.
