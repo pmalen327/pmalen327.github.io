@@ -80,10 +80,13 @@ description: ""
   <p>The spectrum of an operator enjoys lots of nice properties:</p>
 
 <ul>
-  <li><strong>normal</strong> if $aa^* = a^*a$</li>
-  <li><strong>self-adjoint</strong> if $a^* = a$</li>
-  <li><strong>positive</strong> if normal and $\operatorname{sp}_A(a) \subseteq \mathbb{R}_+$</li>
-  <li><strong>projection</strong> if $a^* = a = a^2$</li>
+  <li>$A = \{0\} \implies \operatorname{sp}_A(0) = \varnothing$</li>
+  <li>$\operatorname{sp}_A(\lambda 1_A) = \{\lambda\}$</li>
+  <li>$a$ is invertible iff $0 \notin \operatorname{sp}_A(a)$</li>
+  <li>For a complex polynomial $P$, $\operatorname{sp}_A(P(a)) = P(\operatorname{sp}_A(a))$</li>
+  <li>If $a$ is nilpotent then $\operatorname{sp}_A(a) = \{0\}$</li>
+  <li>If $\varphi:A \to B$ is a morphism of complex unital algebras, then $\operatorname{sp}_B(\varphi(a)) \subseteq \operatorname{sp}_A(a)$</li>
+  <li>If $(a,b) \in A \oplus B$, then $\operatorname{sp}_{A \oplus B}((a,b)) = \operatorname{sp}_A(a) \cup \operatorname{sp}_B(b)$</li>
 </ul>
 
   <p>
