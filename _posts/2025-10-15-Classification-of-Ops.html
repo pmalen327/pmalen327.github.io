@@ -79,17 +79,12 @@ description: ""
 
   <p>The spectrum of an operator enjoys lots of nice properties:</p>
 
-$$
-\begin{itemize}
-  \item $A = \{0\} \implies \operatorname{sp}_A(0) = \varnothing$;
-  \item $\operatorname{sp}_A(\lambda 1_A) = \{\lambda\}$;
-  \item $a$ is invertible iff $0 \notin \operatorname{sp}_A(a)$;
-  \item For a complex polynomial $P$, $\operatorname{sp}_A(P(a)) = P(\operatorname{sp}_A(a))$;
-  \item If $a$ is nilpotent then $\operatorname{sp}_A(a) = \{0\}$;
-  \item If $\varphi:A \to B$ is a morphism of complex unital algebras, then $\operatorname{sp}_B(\varphi(a)) \subseteq \operatorname{sp}_A(a)$;
-  \item If $(a,b) \in A \oplus B$, then $\operatorname{sp}_{A \oplus B}((a,b)) = \operatorname{sp}_A(a) \cup \operatorname{sp}_B(b)$.
-\end{itemize}
-$$
+<ul>
+  <li><strong>normal</strong> if $aa^* = a^*a$</li>
+  <li><strong>self-adjoint</strong> if $a^* = a$</li>
+  <li><strong>positive</strong> if normal and $\operatorname{sp}_A(a) \subseteq \mathbb{R}_+$</li>
+  <li><strong>projection</strong> if $a^* = a = a^2$</li>
+</ul>
 
   <p>
     Studying the spectra of operators is once again a very deep and interesting field,
