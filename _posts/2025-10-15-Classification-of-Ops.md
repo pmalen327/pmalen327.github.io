@@ -57,7 +57,7 @@ $$
 The spectrum of an operator enjoys lots of nice properties.
 The spectrum of an operator enjoys lots of nice properties:
 
-\[
+$$
 \begin{enumerate}
   \item $A = \{0\} \implies \operatorname{sp}_A (0) = \varnothing$
   \item $\operatorname{sp}_A (\lambda 1_A) = \{\lambda\}$
@@ -67,19 +67,19 @@ The spectrum of an operator enjoys lots of nice properties:
   \item If $\varphi:A \to B$ is a morphism of complex unital algebras, then $\operatorname{sp}_B (\varphi(a)) \subseteq \operatorname{sp}_A (a)$
   \item If $(a,b) \in A \oplus B$ then $\operatorname{sp}_{A \oplus B}((a,b)) = \operatorname{sp}_A(a) \cup \operatorname{sp}_B(b)$
 \end{enumerate}
-\]
+$$
 
 Studying the spectra of operators is once again a very deep and interesting field,
 but beyond the context of this entry. Now, the basic classification of operators.
 Let $a \in A$ be an operator in a $C^\*$-algebra $A$, then we can classify $a$ as
-\[
+$$
 \begin{itemize}
-  \item \textbf{normal} if \( aa^* = a^*a \);
-  \item \textbf{self-adjoint} if \( a^* = a \);
-  \item \textbf{positive} if normal and \( \operatorname{sp}_A(a) \subseteq \mathbb{R}_+ \);
-  \item \textbf{projection} if \( a^* = a = a^2 \).
+  \item \textbf{normal} if $ aa^* = a^*a $;
+  \item \textbf{self-adjoint} if $ a^* = a $;
+  \item \textbf{positive} if normal and $ \operatorname{sp}_A(a) \subseteq \mathbb{R}_+ $;
+  \item \textbf{projection} if $ a^* = a = a^2 $.
 \end{itemize}
-\]
+$$
 
 And we denote by $A^+$ the set of all positive operators in $A$. 
 
