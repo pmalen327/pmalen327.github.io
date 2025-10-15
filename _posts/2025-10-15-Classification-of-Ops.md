@@ -12,7 +12,7 @@ theory.
 Let's start small with the definition.
 
 <ins>**Def:**</ins> Let $A$ be a Banach algebra over a field $\mathbb{F}$ with an
-involution $a \mapsto a^*$. Then $A$ is a *$C^*$-algebra*.
+involution $a \mapsto a^*$. Then $A$ is a $C^*$-algebra.
 
 Note that I didn't really mention what the involution *does* or the requirements
 therein. I will gloss over those for now but keep in mind there are certain properties
@@ -79,4 +79,4 @@ the properties of each classification could each easily populate their own entry
 
 I don't have much more today, like I mentioned, this is mostly to get some kinks
 worked out with git and mardown etc. but I figured I may as well mention something
-foundational in operator theory and ultimately, noncommutative geometry.
+foundational in operator theory and ultimately, noncommutative.
