@@ -1,0 +1,130 @@
+---
+layout: post
+title: "Basic Classification of Operators in $C^*$-Algebras"
+tags: []
+description: ""
+---
+
+<article class="post-body">
+
+  <p>
+    Ok I have finally migrated things over to a GitHub.io repo and now things are infinitely
+    easier on my end. So as a sort of "test-drive," I will walk through the basic
+    classification of operators in $C^*$-algebras with respect to the given involution.
+    I will also give some statements of fundamental theorems in operator algebra theory.
+  </p>
+
+  <h3>Definition</h3>
+
+  <p>
+    <ins><strong>Def:</strong></ins> Let $A$ be a Banach algebra over a field $\mathbb{F}$
+    with an involution $a \mapsto a^*$. Then $A$ is a $C^*$-algebra.
+  </p>
+
+  <p>
+    Note that I didn't really mention what the involution <em>does</em> or the requirements
+    therein. I will gloss over those for now but keep in mind there are certain properties
+    required by the involution. The only one to be concerned about for now is the
+    $C^*$-identity $\|aa^*\| = \|a^*a\|$.
+  </p>
+
+  <p>
+    For an ideal $I \subset A$, the quotient algebra $A/I = \{a+I \mid a \in A \}$
+    is also a $C^*$-algebra with norm
+    $\| a+I\| = \inf \{ \| a+x \| \mid x \in I\}$. Recall
+    also that an algebra is <strong><em>simple</em></strong> if its only ideals are trivial.
+  </p>
+
+  <h3>Theorem (Gelfand-Naimark)</h3>
+
+  <p>
+    <ins><strong>Thm: Gelfand-Naimark (Gelfand duality)</strong></ins>
+    Every commutative $C^*$-algebra is isometrically isomorphic to an algebra
+    $C_0(X)$ for a locally compact Hausdorff space $X$.
+  </p>
+
+  <p>
+    As usual, $C_0(X)$ is the algebra of compactly supported functions on $X$.
+    Further, <strong>every</strong> commutative $C^*$-algebra is isometrically isomorphic
+    to a closed $C^*$-subalgebra of some $\mathcal{B}(H)$, the algebra of bounded linear
+    operators on a Hilbert space $H$.
+  </p>
+
+  <p>
+    The Gelfand duality theorem is hugely important. Most $C^*$-algebras are not necessarily
+    "nice" to work with, but compactly supported functions are very nice to work with.
+    Gelfand duality gives us a robust way to bounce between the two. Note also that
+    we get an isometric isomorphism, so even the metric and norms are equivalent in some
+    way. The theory of compactly supported functions is extensive and runs very deep,
+    so identifying the right isomorphism allows us to work in $C^*$-algebras as if we
+    were working in a more familiar function algebra.
+  </p>
+
+  <p>
+    I could spew operator algebra theorems all day, but my intent here is really just
+    to classify the most common/useful classes of operators in $C^*$-algebras.
+    First, let's look at the spectrum of an operator and some neat properties.
+  </p>
+
+  <h3>Definition (Spectrum)</h3>
+
+  <p>
+    <ins><strong>Def:</strong></ins> Let $A$ be a $C^*$-algebra. Then for some $a \in A$,
+    the <strong><em>spectrum</em></strong> of $a$ is the set
+  </p>
+
+  $$
+  \operatorname{sp}_A (a) := \{ \lambda \in \mathbb{C} \mid a - \lambda 1_A \text{ not invertible} \}.
+  $$
+
+  <p>The spectrum of an operator enjoys lots of nice properties:</p>
+
+  $$
+  \begin{aligned}
+  &A = \{0\} \implies \operatorname{sp}_A (0) = \varnothing, \\[4pt]
+  &\operatorname{sp}_A (\lambda 1_A) = \{\lambda\}, \\[4pt]
+  &a \text{ is invertible iff } 0 \notin \operatorname{sp}_A(a), \\[4pt]
+  &\text{For a complex polynomial } P, \ \operatorname{sp}_A (P(a)) = P(\operatorname{sp}_A (a)), \\[4pt]
+  &\text{If } a \text{ is nilpotent then } \operatorname{sp}_A (a) = \{0\}, \\[4pt]
+  &\text{If } \varphi:A \to B \text{ is a morphism of complex unital algebras, then } \operatorname{sp}_B (\varphi(a)) \subseteq \operatorname{sp}_A (a), \\[4pt]
+  &\text{If } (a,b) \in A \oplus B, \text{ then } \operatorname{sp}_{A \oplus B}((a,b)) = \operatorname{sp}_A(a) \cup \operatorname{sp}_B(b).
+  \end{aligned}
+  $$
+
+  <p>
+    Studying the spectra of operators is once again a very deep and interesting field,
+    but beyond the context of this entry. Now, the basic classification of operators.
+  </p>
+
+  <p>
+    Let $a \in A$ be an operator in a $C^*$-algebra $A$, then we can classify $a$ as:
+  </p>
+
+  $$
+  \begin{aligned}
+  &\textbf{normal} &&\text{if } aa^* = a^*a, \\[4pt]
+  &\textbf{self-adjoint} &&\text{if } a^* = a, \\[4pt]
+  &\textbf{positive} &&\text{if normal and } \operatorname{sp}_A(a) \subseteq \mathbb{R}_+, \\[4pt]
+  &\textbf{projection} &&\text{if } a^* = a = a^2.
+  \end{aligned}
+  $$
+
+  <p>
+    We denote by $A^+$ the set of all positive operators in $A$.
+  </p>
+
+  <p>
+    There are many more classifications of operators (trace class, Hilbert-Schmidt, etc.),
+    but the definitions are a little more involved. You will not be able to read
+    a single paper in functional analysis or operator algebras without bumping into
+    the operator classifications given above. These are super important definitions,
+    and the properties of each classification could each easily populate their own entry.
+  </p>
+
+  <p>
+    I don't have much more today — this is mostly to get some kinks
+    worked out with Git and formatting, but I figured I may as well mention something
+    foundational in operator theory and, ultimately, noncommutative geometry.
+  </p>
+
+</article>
