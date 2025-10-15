@@ -55,21 +55,31 @@ $$
 $$
 
 The spectrum of an operator enjoys lots of nice properties.
-- $A = \{0\} \implies \operatorname{sp}_A (0) = \varnothing$
-- $\operatorname{sp}_A (\lambda 1_A) = \{\lambda\}$
-- $a$ is invertible iff $0 \not\in \operatorname{sp}_A(a)$
-- For a complex polynomial $P$, we have $\operatorname{sp}_A (P(a)) = P(\operatorname{sp}_A (a))$
-- If $a$ is nilpotent then $\operatorname{sp}_A (a) = \{0\}$
-- Let $\varphi:A \to B$ be a morphism of complex unital algebras, then $\operatorname{sp}_B (\varphi(a)) \subseteq \operatorname{sp}_A (a)$
-- If $(a,b) \in A \oplus B$ then $\operatorname{sp}_{A \oplus B}((a,b)) = \operatorname{sp}_A(a) \cup \operatorname{sp}_B(b)$
+The spectrum of an operator enjoys lots of nice properties:
+
+\[
+\begin{enumerate}
+  \item $A = \{0\} \implies \operatorname{sp}_A (0) = \varnothing$
+  \item $\operatorname{sp}_A (\lambda 1_A) = \{\lambda\}$
+  \item $a$ is invertible iff $0 \notin \operatorname{sp}_A(a)$
+  \item For a complex polynomial $P$, $\operatorname{sp}_A (P(a)) = P(\operatorname{sp}_A (a))$
+  \item If $a$ is nilpotent then $\operatorname{sp}_A (a) = \{0\}$
+  \item If $\varphi:A \to B$ is a morphism of complex unital algebras, then $\operatorname{sp}_B (\varphi(a)) \subseteq \operatorname{sp}_A (a)$
+  \item If $(a,b) \in A \oplus B$ then $\operatorname{sp}_{A \oplus B}((a,b)) = \operatorname{sp}_A(a) \cup \operatorname{sp}_B(b)$
+\end{enumerate}
+\]
 
 Studying the spectra of operators is once again a very deep and interesting field,
 but beyond the context of this entry. Now, the basic classification of operators.
 Let $a \in A$ be an operator in a $C^\*$-algebra $A$, then we can classify $a$ as
-- **normal** if $aa^\* = a^\*a$
-- **self-adjoint** if $a^\*=a$
-- **positive** if normal and `$\\operatorname{sp}_A (a) \\subseteq \\mathbb{R}_+$`
-- **projection** if $a^\* = a = a^2$
+\[
+\begin{itemize}
+  \item \textbf{normal} if \( aa^* = a^*a \);
+  \item \textbf{self-adjoint} if \( a^* = a \);
+  \item \textbf{positive} if normal and \( \operatorname{sp}_A(a) \subseteq \mathbb{R}_+ \);
+  \item \textbf{projection} if \( a^* = a = a^2 \).
+\end{itemize}
+\]
 
 And we denote by $A^+$ the set of all positive operators in $A$. 
 
