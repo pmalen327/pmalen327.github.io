@@ -55,7 +55,7 @@ description: ""
     can we complete this and actually form and abelian group? Thanks to King Grothendieck,
     we can build and abelian group $K(X)$ from the semigroup of vector bundles.
     $K(X)$ is the Grothendieck group of isomorphism classes of vector bundles over 
-    $X$. This is calle the <em>first $K$-theory of $X$</em>. Ok this is also great
+    $X$. This is called the <em>first $K$-theory of $X$</em>. Ok this is also great
     but how is this a group? Grothendieck defined an equivalence relation on the
     vector bundles that essentially gives us a "subtraction" operation, thus giving
     additive inverses to elements of $K(X)$.
@@ -81,6 +81,33 @@ description: ""
     I should mention too that the elements of $K(X)$ are not vector bundles, but
     rather formal differences of vector bundles $[E]-[F]$.
 </p>
+
+<p>
+    We usually refer to such $G$ as some kind of <em>stabilizer</em>. So while $E$
+    and $F$ may have horribly mismatched dimension and topologies, $G$ may be nice
+    enough to get around this. If dimensions and topologies agree, then $G$ is usually
+    just the zero or trivial bundle, but if they don't agree then we need some more
+    sophistication encoded in $G$. Lets look at a quick example.
+</p>
+
+<p>
+    Let $X=S^2$, $E$ be the Hopf line bundle (you don't need to know what this is exactly,
+    but its the usualy line bundle with twist), and $\epsilon^n$ be the $n$-dimensional
+    trivial line bundle. Consider the pairs $(E,\epsilon^1)$ and $(\epsilon^2, \epsilon^1 \opluse \epsilon^1)$.
+    Recall also that $E \oplus \epsilon^1 \cong \epsilon^2$. For these two pairs
+    to be stably isomorphic, we need a $G$ such that
+    $$
+        E \oplus (\epsilon^1 \oplus \epsilon^1) \oplus G \cong \epsilon^2 \oplus \epsilon^1 \oplus G
+    $$
+    So clearly we can't take $G$ to be the zero bundle, we need something nice yet
+    nontrivial. If we choose $G=\epsilon^1$ then we actually get $\epsilon^3$ on both
+    sides and thus the desired isomorphism. So in a nutshell, we need a $G$ that
+    gives enough "space" and topology to undo any weird knots or homotopies in the
+    vector bundles. Note that existence of $G$ is only guaranteed under certain
+    conditions and there are plenty of theorems that give us more insight into
+    when we can have such a $G$.
+</p>
+
 
 <p>
     Now I just want to mention two important results in $K$-theory. First, consider
@@ -121,9 +148,6 @@ description: ""
     This difference also has some deep theory and I still don't understand hardly any
     of it. 
 </p>
-
-
-
 
 <p>
     We always see periodicity in mathematics, trigonometry is usually
