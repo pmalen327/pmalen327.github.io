@@ -1,0 +1,127 @@
+---
+layout: post
+title: "K-Theory Prelude"
+tags: []
+description: ""
+---
+
+<article class="post-body">
+
+<p>
+    $K$-theory is one of those fields of mathematics that has always seemed too deep
+    and not at all approachable for me. As it turns out, it has a relatively low
+    barrier for entry but of course one could still study it their whole life and
+    barely make a dent. There are a few flavors of $K$-theory. We usually split
+    it into topological and algebraic $K$-theory. Ok great, well what does that mean?
+    Hatcher defined topological $K$-theory as a cohomology theory for vector bundles
+    and algebraic $K$-theory as a homology theory for varieties. Once again, what 
+    does that mean? Well before we get into that, first lets narrow the scope and
+    just focuse on topological $K$-theory. Great, now all we have to do is learn
+    about cohomology of vector bundles, should be easy enough.
+</p>
+
+<p>
+    I will assume we are ok with the basic theory of vector bundles, specifically
+    complex bundles. If you don't know what that is then fret not, we really only
+    need the definition to start talking about the objects of interest. As a refresher,
+    maybe I will define vector bundles.
+</p>
+
+<p>
+  <ins><strong>Def:</strong></ins> A <strong><em>vector bundle</em></strong> is a
+  triplet $\xi = (E,\pi,B)$ with
+    <ul>
+        <li>$E$ a topological space, usually a manifold, sometimes called the "total"
+        space $E(\xi)$</li>
+        <li>$B$ a topological space, sometimes called the "base" space</li>
+        <li>A continuous surjection $\pi:E \to B$ where the fibres over each $b \in B$
+            are isomorphic to $\mathbb{C}^n$
+        </li>
+    </ul>
+</p>
+
+<p>
+    There are a few more details regarding local trivializations etc. but we can
+    go over that if needed. Usually, I denote vector bundles with just $E$ and this
+    is also a pretty standard practice. But keep in mind that its technically a
+    triplet of two topological spaces and some kind of projection.
+</p>
+
+<p>
+    Ok now we can finally move on to some $K$-theory stuff. Let $X$ be the base space (a compact Hausdorff space)
+    and let $E$ and $F$ be complex vector bundles over $X$. The addition $[E]+[F] = E \oplus F$
+    is well defined. Well defined enough in fact that we even get a semigroup under
+    the direct sum. This is great, but we can do even better. The question is, how
+    can we complete this and actually form and abelian group? Thanks to King Grothendieck,
+    we can build and abelian group $K(X)$ from the semigroup of vector bundles.
+    $K(X)$ is the Grothendieck group of isomorphism classes of vector bundles over 
+    $X$. This is calle the <em>first $K$-theory of $X$</em>. Ok this is also great
+    but how is this a group? Grothendieck defined an equivalence relation on the
+    vector bundles that essentially gives us a "subtraction" operation, thus giving
+    additive inverses to elements of $K(X)$.
+</p>
+
+<p>
+    We say two vector bundles $E$ and $F$ are <em>stably isomorphic</em> if there 
+    exists some $n$ such that $E \oplus \mathbb{C}^n \cong F \oplus \mathbb{C}^n$.
+    Further, we define the cancellation law via
+    $$
+        (E-E')+(F-F') = (E\oplus F)-(E' \oplus F')
+    $$
+    Where $[E]-[F] = [E']-[F']$ if there exists a bundle $G$ such that
+    $$
+        E\oplus F' \oplus G \cong E' \oplus F \oplus G
+    $$
+    So $K(X)$ becomes a group under this cancellation law. As it turns out,
+    $K(X)$ is even a commutative ring with unit with multiplication defined via
+    the tensor product
+    $$
+        ([E]-[F])\cdot ([G]-[H]) = [E \otimes G] + [F \otimes H] - [E\otimes H] - [F \otimes G]
+    $$
+    I should mention too that the elements of $K(X)$ are not vector bundles, but
+    rather formal differences of vector bundles $[E]-[F]$.
+</p>
+
+<p>
+    Now I just want to mention two important results in $K$-theory. First, consider
+    the map
+    $$
+        \mu : K(X) \otimes K(S^2) \to K(X \times S^2)
+    $$
+    As it turns out, $\mu$ is actually an isopmorphism. This means $K(X) \otimes K(S^2)$
+    is actually isomorphic to $K(X \times S^2)$. This is suspiciously neat, but 
+    actually leads to an even cooler result.
+</p>
+
+<p>
+    Perhaps the most important and deep result in $K$-theory is <strong><em>Bott periodicity</em></strong>.
+    Bott says that
+    $$
+        K(S^n) \cong K(S^{n+2})
+    $$
+    for ALL nontrivial $n$. Ok how the hell does this work. Well I looked up a few
+    different flavors of the proof and it is far from simple. There are multiple
+    approaches to the proof using tools from different fields of math, while they
+    are well known and documented, they are extremely deep and difficult. This makes
+    sense however, it is very rare that such a nice theorem has a simple and clean 
+    proof. While any given proof of Bott is extremely technical, they have all been
+    described as beautiful. For me it is one of those theorems that still just absolutely
+    blows my mind. On the surface it seems like there's no world where this should
+    hold, so the fact it holds for all $n$ is just ridiculous, its so cool. Its
+    always a good idea to look for counter examples to proved theorems in order to
+    deepen your understanding so I did exactly that. Every example I worked out
+    just continued to blow my mind. Using $\mu$ to construct sphere isopmorphisms
+    over chosen base spaces then finding $K$-theories for each is just a really
+    cool loop.
+</p>
+
+<p>
+    We always see periodicity in mathematics, trigonometry is usually
+    where we are first exposed to it. But this is one of the most fascinating examples
+    of periodicity I have come across to date. I hope to one day be able to understand
+    one of the proofs of Bott periodicity but for now its beauty will continue to
+    torment me.
+</p>
+
+
+</article>
