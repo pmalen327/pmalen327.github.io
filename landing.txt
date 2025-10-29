@@ -1,0 +1,12 @@
+  <p>
+    This page serves as a rolling journal of thoughts and ideas from my daily
+    flights of mathematical lunacy. By no means am I an expert in any of these fields.
+    This will be a more informal and casual approach to some advanced mathematical
+    topics in my own words. Yes there will be mistakes here and there, this is not
+    peer reviewed or nearly as rigorous as a research level report. So take everything
+    with a grain of salt. However, I hope this encourages you to learn something
+    new about an interesting field of math or maybe learn about fields of math
+    you never knew existed. Always feel free to reach out if you have questions
+    or thoughts, I love discussing mathematics and I love learning from others.
+    Cheers.
+  </p>
