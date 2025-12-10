@@ -20,12 +20,26 @@ description: ""
 
 <p>
     We first need to define the <i>Laplcian operator</i>. The Laplacian acts on a 
-    $\C^2$ function by summing all of the second derivatives, explicitly, we have
+    $C^2$ (twice differentiable) function by summing all of the second derivatives, explicitly, we have
     $$
         \Delta f = \sum_{j=1}^n \left( \frac{\partial f}{\partial x_j}\right)^2
     $$
-    That notation is a mess but it really is just the sum of second derivatives of $f$.
-    Further, we say a function $f$ is <i>harmonic</i> if $\Delta f = 0$.
+    That notation is a mess but it really is just the sum of homogeneous
+    second derivatives of $f$. Further, we say a function $f$ is <i>harmonic</i>
+    if $\Delta f = 0$. For a concrete example, lets take $f(x,y)=x^3-3xy^2$.
+    Now lets compute the derivatives
+    $$
+        \begin{align*}
+            f_x &= 3x^2 - 3y^2\\
+            f_{xx} &= 6x\\
+            f_y &= -6xy\\
+            f_{yy} &= 6x
+        \end{align*}
+    $$
+    Now we just sum $f_{xx}+f_{yy} = 6x - 6x = 0$. So $f$ is in fact harmonic.
+    This is pretty straightforward, but its the properties of harmonic functions
+    that we are most interested in. I could just give a laundry list of things but
+    a few properties I would like to give some motivation behind.
 </p>
 
 
