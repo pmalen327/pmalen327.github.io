@@ -5,6 +5,19 @@ tags: []
 description: ""
 ---
 
+<script>
+  window.MathJax = {
+    tex: {
+      packages: {'[+]': ['esint']}
+    }
+  };
+</script>
+
+<script id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+
+
 <article class="post-body">
 
 <p>
@@ -20,7 +33,8 @@ description: ""
 
 <p>
     We first need to define the <i>Laplcian operator</i>. The Laplacian acts on a 
-    $C^2$ (twice differentiable) function by summing all of the second derivatives, explicitly, we have
+    $C^2$ (twice differentiable) function by summing all of the homogeneous
+    second derivatives, explicitly, we have
     $$
         \Delta f = \sum_{j=1}^n \left( \frac{\partial f}{\partial x_j}\right)^2
     $$
@@ -42,6 +56,28 @@ description: ""
     a few properties I would like to give some motivation behind.
 </p>
 
+<p>
+    A huge amount of the convenient properties of harmonic functions were discovered
+    or motivated by the study of PDE's. So I want to start with one of the most
+    basic properties of harmonic functions, one that is used extensively in basic
+    PDE thoery. We call this first property the <strong>Mean Value Property</strong>.
+</p>
+
+<p>
+  <ins><strong>Def:</strong></ins> A harmonic function $f \in C^2(\mathbb{R})$
+  satisfies the \<strong>\<em>mean value property</em></strong>:
+  $$
+    f(x) = \fint_{\partial B(x,r)} f(y) dS(y) = \fint_{B(x,r)} f(y)dy
+  $$
+  where $B(x,r)$ is the ball centered at $x$ with radius $r$.
+</p>
+
+<p>
+    The weird looking integral sign is just the average value integral and the 
+    $dS(y)$ indicates a surface measure. In not so many words, the average value
+    of a harmonic function around the boundary of the ball $B(x,r)$ is the same as
+    the average value everywhere inside the ball.
+</p>
 
 
 </article>
