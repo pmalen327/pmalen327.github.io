@@ -43,11 +43,25 @@ description: ""
     $$
         \operatorname{Nil}(R) = \{x \in R: x^n = 0 \text{ for some } n \ge 1\}
     $$
-    Further, it is the intersection of all the prime ideals of $R$. So we can think
+    Further, it is the intersection of all the prime ideals of $R$.
+    $$
+        \operatorname{Nil}(R) = \bigcap_{\mathfrak{p} \in R} \mathfrak{p}
+    $$
+    So we can think
     of the nilradical as identifying all the elements that ``vanish'' on prime ideals.
     Take for example $\mathbb{Z}_{12}$. We have $6^2 = 36 \equiv 0 \mod 12$. So
     $6$ is a nilpotent element. So the nilradical is $\operatorname{Nil}(\mathbb{Z}_{12}) = \{0,6\}$.
-    
+</p>
+
+<p>
+    Of course, we have a similar notion of a radical in the context of maximal ideals,
+    namely, the Jacobson radical. For a ring $R$, the <b>Jacobson radical</b>
+    is the intersection of all the maximal ideals of $R$, that is
+    $$
+        J(R) = \bigcap_{\mathfrak{m} \in R} \mathfrak{m}
+    $$
+    A useful equivalent definition is that an element $x$ is in $J(R)$ iff $1-rx$
+    is a unit (invertible) for all $r \in R$.
 </p>
 
 
