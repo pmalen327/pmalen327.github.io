@@ -18,7 +18,9 @@ description: ""
     subgroup of $R$ such that for all $a \in R$ and $b\in I$, we have $ab \in I$.
     So if we are in a polynomial or function ring, if a function vanishes on an ideal
     then multiplying it by another function outside the ideal still yields a vanishing
-    function. So in this way, ideals have a notion of closure. 
+    function. So in this way, ideals have a notion of closure. Ideals are the ring
+    theory analogue of subgroups.
+
 </p>
 
 <p>
@@ -36,7 +38,16 @@ description: ""
 
 <p>
     Now we have all we need to talk about the radicals of interest. First, we talk
-    about the <b>nilradical</b> of a ring.
+    about the nilradical of a ring. The <b>nilradical</b> of a ring $R$ is the set
+    of all nilpotent elements, that is
+    $$
+        \operatorname{Nil}(R) = \{x \in R: x^n = 0 \text{ for some } n \ge 1\}
+    $$
+    Further, it is the intersection of all the prime ideals of $R$. So we can think
+    of the nilradical as identifying all the elements that ``vanish'' on prime ideals.
+    Take for example $\mathbb{Z}_{12}$. We have $6^2 = 36 \equiv 0 \mod 12$. So
+    $6$ is a nilpotent element. So the nilradical is $\operatorname{Nil}(\mathbb{Z}_{12}) = \{0,6\}$.
+    
 </p>
 
 
